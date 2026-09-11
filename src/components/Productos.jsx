@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+const API_URL = import.meta.env.PUBLIC_API_URL;
 
 function Productos() {
 
@@ -8,7 +8,7 @@ function Productos() {
 
     useEffect(function() {
         async function cargarProductos() {
-            const response = await fetch("http://localhost:3000/productos")
+            const response = await fetch(`${API_URL}/productos`)
             const datos = await response.json()
 
             setProductos(datos)
